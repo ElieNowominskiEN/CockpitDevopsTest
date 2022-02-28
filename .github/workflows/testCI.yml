@@ -1,6 +1,9 @@
 # This is a basic workflow to help you get started with Actions
 
+
 name: CI
+
+concurrency: production
 
 # Controls when the workflow will run
 on:
@@ -39,11 +42,12 @@ jobs:
     steps:
       - name: Run test
         run: echo Testing...
-  deploy:
+  deployment:
     runs-on: ubuntu-latest
+    environment: production
     steps:
-      - name: Deployment
-        run: echo Deployement...
+      - name: deploy
+        # ...deployment-specific steps
       
     
     
